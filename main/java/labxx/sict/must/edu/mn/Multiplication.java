@@ -1,5 +1,8 @@
 package labxx.sict.must.edu.mn;
 
+/**
+ * Multiply two double values (conflict version B).
+ */
 public class Multiplication {
 
     /**
