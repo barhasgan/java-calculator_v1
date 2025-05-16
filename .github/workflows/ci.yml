@@ -2,18 +2,13 @@ name: CI Process
 
 on:
   push:
-    branches:
-      - main
-      - develop
-      - release/*
+    branches: [ main, develop, release/* ]
   pull_request:
-    branches:
-      - main
-      - develop
-      - release/*
+    branches: [ main, develop, release/* ]
 
 jobs:
-  build-and-test:
+  ci-status:
+    name: CI Status Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -25,7 +20,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Run Tests Only
+      - name: Run Tests
         run: mvn test
 
       - name: Generate JaCoCo Report
