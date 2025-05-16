@@ -23,14 +23,15 @@
 
     <build>
         <plugins>
-            <!-- Run unit tests -->
+
+            <!-- JUnit Test Runner -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
             </plugin>
 
-            <!-- Checkstyle for code formatting -->
+            <!-- Checkstyle Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -50,7 +51,7 @@
                 </executions>
             </plugin>
 
-            <!-- JaCoCo for test coverage -->
+            <!-- JaCoCo Plugin with 100% Branch Coverage Rule -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -70,6 +71,7 @@
                     </execution>
                     <execution>
                         <id>check</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -90,6 +92,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 </project>
