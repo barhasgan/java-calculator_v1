@@ -52,7 +52,7 @@
             </plugin>
 
             <!-- JaCoCo Plugin with 100% Branch Coverage Rule -->
-            <plugin>
+             <plugin>
     <groupId>org.jacoco</groupId>
     <artifactId>jacoco-maven-plugin</artifactId>
     <version>0.8.12</version>
@@ -65,7 +65,7 @@
         </execution>
         <execution>
             <id>report</id>
-            <phase>verify</phase>
+            <phase>test</phase>
             <goals>
                 <goal>report</goal>
             </goals>
@@ -79,7 +79,7 @@
             <configuration>
                 <rules>
                     <rule>
-                        <element>BUNDLE</element>
+                        <element>CLASS</element>
                         <limits>
                             <limit>
                                 <counter>BRANCH</counter>
@@ -93,6 +93,7 @@
         </execution>
     </executions>
 </plugin>
+
 
 
         </plugins>
